@@ -3,6 +3,6 @@ Servicio streaming que sea capaz de leer un dato de otro emisor streaming, reali
 
 Tecnologas utilizadas:
 
-Python 3.7
-Google Cloud Plattforms
-Google DataFlow
+Python 3.7 <br />
+Google Cloud Plattforms <br />
+Google DataFlow <br />
