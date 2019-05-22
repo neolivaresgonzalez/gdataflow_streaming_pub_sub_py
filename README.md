@@ -53,13 +53,21 @@ El tópico y el destino de BigQuery son estáticos y están en el repositorio de
 
 ## 4. Resultados
 
-![Alt text](https://i.imgur.com/KODkS3w.png "Pipeline generado en Dataflow")
+Es posible visualizar en la imagen 4.1, el flujo del pipeline de generado con Google Dataflow, el cual cuenta con los 3 procesos principales, la obtención de los tweets mediante el patrón pubsub. Posteriormente se obtiene el payload del tweet para reordenar esta información en los campos del tableRow que ser cargará como entrada nueva a la tabla del dataset que está albergado en Google Clodu BigQuery
 
-![Alt text](https://i.imgur.com/Saz1BIo.png "Pipeline generado extendido en Dataflow")
+![Alt text](https://i.imgur.com/KODkS3w.png "4.1.Pipeline generado en Dataflow")
 
-![Alt text](https://i.imgur.com/4b95bHG.png "Resultados en BigQuery")
+En la imagen 4.2 el flujo anteriormente mencionado, esta extendido, permitiendo vislumbrar los procesos mas acotados que se realizan dentro de los los procesos macro vistos. Por ejemplo, en la obtencion de los tweets desde el stream de Twitter, uno de los procesos consiste en la identificacion de la fuente de información no acotada (unbounded source) y posteriormente se aplica el mapping correspondiente tweet.
 
-![Alt text](https://i.imgur.com/uRqbTRl.png "Resultados en BigQuery formateados")
+![Alt text](https://i.imgur.com/Saz1BIo.png "4.2 Pipeline generado extendido en Dataflow")
+
+La informacion de los tweets se encuentra en el dataset dentro de la tabla twitter.tweets. En la imagen 4.3 se muestra un subconjunto de los datos pertenecientes al stream
+
+![Alt text](https://i.imgur.com/4b95bHG.png "4.3 Resultados en BigQuery")
+
+Aplicando un filtro para los tweets, mediante SQL se obtiene una representación más intuitiva de estos, es posible visualizar esto en la imagen 4.4. 
+
+![Alt text](https://i.imgur.com/uRqbTRl.png "4.4 Resultados en BigQuery formateados")
 
 
 
