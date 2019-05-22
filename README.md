@@ -71,6 +71,10 @@ Antes de realizar el deployment es necesario contar con algunos recursos en el p
 
 - Se debe tener activada la API de Google App Engine.
 
+- Una vez satisfechos los requerimientos anteriores solo necesita clonar este repositorio, ir a la raíz y ejecutar el siguiente comando:
+
+  - gcloud builds submit --config=cloudbuild.yaml
+
 
 
 
