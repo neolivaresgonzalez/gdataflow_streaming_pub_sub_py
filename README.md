@@ -16,7 +16,7 @@ El enfoque que se dará a la solución consiste en dos módulos distintos, una a
 
 ## 3. Desarrollo de la acividad
 
-Tecnologas utilizadas:
+### Tecnologas utilizadas:
 
 - Python 2.7 <br />
 - API Twitter Developers <br />
