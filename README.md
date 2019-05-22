@@ -53,6 +53,15 @@ El tópico y el destino de BigQuery son estáticos y están en el repositorio de
 
 ## 4. Resultados
 
+![Alt text](https://i.imgur.com/KODkS3w.png "Pipeline generado en Dataflow")
+
+![Alt text](https://i.imgur.com/Saz1BIo.png "Pipeline generado extendido en Dataflow")
+
+![Alt text](https://i.imgur.com/4b95bHG.png "Resultados en BigQuery")
+
+![Alt text](https://i.imgur.com/uRqbTRl.png "Resultados en BigQuery formateados")
+
+
 
 
 ## 5. Repositorios
