@@ -1,0 +1,15 @@
+steps:
+# Código
+- name: gcr.io/cloud-builders/git
+  args: ['clone', 'https://github.com/neolivaresgonzalez/gdataflow_streaming_pub_sub_py']
+
+# App Engine
+- name: gcr.io/cloud-builders/gcloud
+  args: ['app', 'deploy']
+  dir: 'twitter-to-pubsub'
+
+# Dataflow
+- name: gcr.io/cloud-builders/gradle
+  args: ['run']
+
+timeout: 1800s
