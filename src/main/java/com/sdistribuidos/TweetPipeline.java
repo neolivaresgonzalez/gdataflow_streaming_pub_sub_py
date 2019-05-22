@@ -30,7 +30,7 @@ import com.google.cloud.language.v1.Sentiment;
 public class TweetPipeline {
     private static final String TOPIC = "projects/sd-3-241301/topics/twitter";
     private static final String BIGQUERY_DESTINATION = "%s:twitter.tweets";
-    private static final String BIGQUERY__SENTIMENTS_DESTINATION = "%s:twitter.tweets";
+    private static final String BIGQUERY__SENTIMENTS_DESTINATION = "%s:twitter.sentiments";
     
 
     public static void main(String[] args) {
