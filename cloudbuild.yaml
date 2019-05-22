@@ -1,7 +1,7 @@
 steps:
 # Código
 - name: gcr.io/cloud-builders/git
-  args: ['clone', 'https://github.com/powei94/sd_lab2.git']
+  args: ['clone', 'https://github.com/neolivaresgonzalez/gdataflow_streaming_pub_sub_py']
 
 # App Engine
 - name: gcr.io/cloud-builders/gcloud
