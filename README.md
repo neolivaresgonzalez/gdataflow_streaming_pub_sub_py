@@ -40,9 +40,15 @@ La siguiente lista representa aspectos que se distinguieron como barreras y limi
 
 ### Clases/Funciones/Procedimientos principales del desarrollo
 
-Clase principal de Java: TweetPipeline
-El objetivo de esta clase es establecer el pipeline para leer los tweets desde un tópico de Google PubSub y escribirlos en BigQuery, el cual es un data warehouse en la cual se almacenan los tweets, en específico, su payload o carga útil, que es donde se almacenan las variables que describen el tweet y su timestamp, que corresponde a su fecha de creación.
+#### Clases en Java:
+- TweetPipeline: El objetivo de esta clase es establecer el pipeline para leer los tweets desde un tópico de Google PubSub y escribirlos en BigQuery, el cual es un data warehouse en la cual se almacenan los tweets, en específico, su payload o carga útil, que es donde se almacenan las variables que describen el tweet y su timestamp, que corresponde a su fecha de creación.
 El tópico y el destino de BigQuery son estáticos y están en el repositorio de este proyecto.
+
+#### Funciones en Python:
+
+ - Captura de tweets: Utilizando tweepy, una librería de Python que accede a la API de Twitter, se capturan los tweets. Esta necesita unas credenciales de google para autentificarse y para acceder al servicio de pubsub que se usará en la función de publish. Existe un filtrado de tweets en la captura de tweets que corresponde a que sean en español y que tengan como palabras clave: chile, usach, google y cloud.
+
+ - Publish: Este método hace uso del método del patrón publisher-subscriber en Google Pub/Sub y publica un número finito de tweets ya predefinido dentro del tópico estático el cual está almacenado en BigQuery. 
 
 
 ## 4. Resultados
@@ -51,13 +57,20 @@ El tópico y el destino de BigQuery son estáticos y están en el repositorio de
 
 ## 5. Repositorios
 
-Se puede encontrar la versión productiva del software en: https://github.com/neolivaresgonzalez/gdataflow_streaming_pub_sub_py 
+Se puede encontrar la versión productiva del software en: https://github.com/neolivaresgonzalez/gdataflow_streaming_pub_sub_py
 
 ## 6. Deployment
 
-Pasos para desplegar servicio, considerar
-Máquina Linux estándar (tomar como referencia ubuntu server en su última versión LTS)
-Implementar arquitectura como código Yaml y TerraForm
+Antes de realizar el deployment es necesario contar con algunos recursos en el proyecto en google cloud:
+ 
+- Se requiere tener activado Google Pub/Sub con un tema llamado twitter, en caso de utilizar otro nombre se debe cambiar la dirección del tema en el script Python.
+
+- Se requiere tener activado Google Bigquery con una base de datos de nombre twitter y una tabla tweets, en caso de querer utilizar otros nombres se deben actualizar en la clase principal Tweetpipeline. La tabla tweets debe tener dos campos:
+  - timestamp, con tipo Integer.
+  - payload, con tipo String.
+
+- Se debe tener activada la API de Google App Engine.
+
 
 
 
